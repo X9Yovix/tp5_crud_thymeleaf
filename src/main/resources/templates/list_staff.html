@@ -24,12 +24,25 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th colspan="2">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr th:each="i : ${staffs}">
                                 <td th:text="${i.name}"></td>
                                 <td th:text="${i.email}"></td>
+                                <td>
+                                    <a th:href="@{/staff/update/{id}(id=${i.id})}" class="btn btn-warning">
+                                        UPDATE
+                                        <i class="fas fa-user-edit ml-2"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a th:href="@{/staff/delete/{id}(id=${i.id})}" class="btn btn-danger">
+                                        DELETE
+                                        <i class="fas fa-user-times ml-2"></i>
+                                    </a>
+                                </td>
                             </tr>
                             </tbody>
                         </table>

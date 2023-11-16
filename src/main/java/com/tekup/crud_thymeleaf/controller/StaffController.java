@@ -37,4 +37,15 @@ public class StaffController {
         return "redirect:/";
     }
 
+    @PostMapping("/staff/update/{id}")
+    public String updateStaff(Staff staff) {
+        System.out.println(staff);
+        staffService.addOrUpdateStaff(staff);
+        return "redirect:/";
+    }
+    @PostMapping("/staff/delete/{id}")
+    public String deleteStaff(Staff staff) {
+        return "redirect:/";
+    }
+
 }
