@@ -11,6 +11,12 @@
         <div class="card-body">
             <div th:switch="${staffs}" class="container my-5">
                 <div class="col-md-12">
+                    <p class="my-5">
+                        <a href="/staff"
+                           class="btn btn-primary">
+                            <i class="fas fa-user-plus ml-2"> Add Staff </i>
+                        </a>
+                    </p>
                     <h2 th:case="null">No record found</h2>
                     <div th:case="*">
                         <table class="table table-striped table-responsive-md">
@@ -21,9 +27,9 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr th:each="staff : ${staffs}">
-                                <td th:text="${staff.name}"></td>
-                                <td th:text="${staff.email}"></td>
+                            <tr th:each="i : ${staffs}">
+                                <td th:text="${i.name}"></td>
+                                <td th:text="${i.email}"></td>
                             </tr>
                             </tbody>
                         </table>

@@ -14,7 +14,7 @@ public class StaffServiceImp implements StaffService {
 
     @Override
     public void addOrUpdateStaff(Staff staff) {
-        if (staff.getId() != null) {
+        if (staff.getId() == null) {
             staffRepository.save(staff);
         } else {
             Staff element = staffRepository.findById(staff.getId()).get();
