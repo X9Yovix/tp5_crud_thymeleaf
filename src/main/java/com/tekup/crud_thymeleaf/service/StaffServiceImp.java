@@ -36,7 +36,7 @@ public class StaffServiceImp implements StaffService {
     }
 
     @Override
-    public void deleteStaff(Staff staff) {
-        staffRepository.delete(staff);
+    public void deleteStaff(Long id) {
+        staffRepository.deleteById(id);
     }
 }

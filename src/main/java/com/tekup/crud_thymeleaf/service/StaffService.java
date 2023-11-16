@@ -8,5 +8,5 @@ public interface StaffService {
     public void addOrUpdateStaff(Staff staff);
     public List<Staff> getAllStaffs();
     public Staff staffById(Long id);
-    public void deleteStaff(Staff staff);
+    public void deleteStaff(Long id);
 }
