@@ -4,29 +4,32 @@
     <meta charset="UTF-8">
     <title>Add Or Update Staff</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<div class="container my-5">
-    <h3>Add Staff</h3>
-    <div class="card">
+<div class="container my-5 min-vh-100 d-flex align-items-center">
+    <div class="card card-style m-auto">
         <div class="card-body">
-            <div class="col-md-10">
+            <div class="col-md-12">
+                <h4 class="mt-4 text-center"><i class="fa-solid fa-address-card"></i> Add/Update Staff</h4>
                 <form th:action="@{/staff/save}" th:object="${staff}" method="POST">
-                    <div class="row">
-                        <div class="form-group col-md-8">
-                            <input type="hidden" class="form-control" id="id" name="id" th:field="*{id}"/>
+                    <div class="row text-center">
+                        <div class="form-group col-md-12">
+                            <input type="hidden" class="form-control w-50 m-auto" id="id" name="id"
+                                   th:field="*{id}"/>
                         </div>
-                        <div class="form-group col-md-8">
-                            <label for="name" class="col-form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Name"
+                        <div class="form-group col-md-12 my-4">
+                            <label for="name" class="col-form-label fw-bold">Name</label>
+                            <input type="text" class="form-control w-50 m-auto" id="name" name="name" placeholder="Name"
                                    th:field="*{name}"/>
                         </div>
-                        <div class="form-group col-md-8">
-                            <label for="email" class="col-form-label">Email</label>
-                            <input type="text" class="form-control" id="email" name="email" placeholder="Email"
+                        <div class="form-group col-md-12 my-4">
+                            <label for="email" class="col-form-label fw-bold">Email</label>
+                            <input type="text" class="form-control w-50 m-auto" id="email" name="email" placeholder="Email"
                                    th:field="*{email}"/>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12 my-4">
                             <input type="submit" class="btn btn-primary" value="Submit"/>
                         </div>
                     </div>
