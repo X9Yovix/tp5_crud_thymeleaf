@@ -20,7 +20,6 @@ public class StaffController {
     public String getAllStaffs(Model model) {
         List<Staff> staffList = staffService.getAllStaffs();
         if (!staffList.isEmpty()) {
-            System.out.println(staffList);
             model.addAttribute("staffs", staffList);
         }
         return "list_staff";
