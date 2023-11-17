@@ -34,7 +34,6 @@ public class StaffController {
 
     @PostMapping("/staff/save")
     public String saveStaff(Staff staff) {
-        System.out.println(staff);
         staffService.addOrUpdateStaff(staff);
         return "redirect:/";
     }
