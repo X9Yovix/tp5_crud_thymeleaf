@@ -28,6 +28,7 @@ public class StaffController {
 
     @GetMapping("/staff")
     public String addStaff(Model model) {
+        model.addAttribute("staff", new Staff());
         return "add_edit_staff";
     }
 
@@ -38,11 +39,11 @@ public class StaffController {
         return "redirect:/";
     }
 
-    @PostMapping("/staff/update/{id}")
-    public String updateStaff(Staff staff) {
-        System.out.println(staff);
-        staffService.addOrUpdateStaff(staff);
-        return "redirect:/";
+    @GetMapping("/staff/update/{id}")
+    public String updateStaff(Model model, @PathVariable Long id) {
+        Staff staff = staffService.staffById(id);
+        model.addAttribute("staff", staff);
+        return "add_edit_staff";
     }
     @GetMapping("/staff/delete/{id}")
     public String deleteStaff(@PathVariable Long id) {
